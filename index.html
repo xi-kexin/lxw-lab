@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>施肥技术与耕地保育团队</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E5631',
+                        secondary: '#4CAF50',
+                        accent: '#8DDFCB',
+                        light: '#F5F5DC',
+                        dark: '#333333',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- 导航栏 -->
+    <nav id="main-nav" class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-primary font-bold text-xl flex items-center">
+                <i class="fa fa-leaf mr-2"></i>
+                <span>施肥技术与耕地保育团队</span>
+            </a>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-primary hover:text-secondary transition-colors">首页</a>
+                <a href="members.html" class="text-primary hover:text-secondary transition-colors">团队成员</a>
+                <a href="achievements.html" class="text-primary hover:text-secondary transition-colors">研究成果</a>
+                <a href="gallery.html" class="text-primary hover:text-secondary transition-colors">团队风采</a>
+                <a href="recruitment.html" class="text-primary hover:text-secondary transition-colors">招生信息</a> <!-- 新增导航项 -->
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menu-toggle" class="md:hidden text-primary focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="index.html" class="text-primary hover:text-secondary py-2 border-b border-gray-100">首页</a>
+                <a href="members.html" class="text-primary hover:text-secondary py-2 border-b border-gray-100">团队成员</a>
+                <a href="achievements.html" class="text-primary hover:text-secondary py-2 border-b border-gray-100">研究成果</a>
+                <a href="gallery.html" class="text-primary hover:text-secondary py-2 border-b border-gray-100">团队风采</a>
+                <a href="recruitment.html" class="text-primary hover:text-secondary py-2">招生信息</a> <!-- 新增移动端导航项 -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="pt-20 md:pt-0 relative h-[80vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://github.com/acdmini/lxw-lab/blob/main/hezhao1.jpg" alt="农业研究背景" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-primary/50"></div>
+        </div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-[clamp(2rem,5vw,4rem)] font-bold text-white mb-4 text-shadow animate-fadeIn">
+                施肥技术与耕地保育团队
+            </h1>
+            <p class="text-[clamp(1rem,2vw,1.5rem)] text-white mb-8 max-w-3xl mx-auto text-shadow">
+                致力于农业绿色发展与功能农业研究，减少化肥用量，提高土壤质量
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="intro.html" class="bg-white text-primary hover:bg-secondary hover:text-white transition-colors px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl">
+                    了解团队
+                </a>
+                <a href="members.html" class="bg-transparent border-2 border-white text-white hover:bg-white/20 transition-colors px-8 py-3 rounded-full font-medium">
+                    加入我们
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <a href="#about" class="text-white opacity-80 hover:opacity-100 transition-opacity">
+                <i class="fa fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- 团队简介 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">团队简介</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <p class="text-lg mb-6 leading-relaxed">
+                        施肥技术与耕地保育团队以减少化肥用量、提高土壤质量为目标，主要开展有机肥质量评价及改土机理、土壤养分高效利用、植物高效富硒技术等方向的研究，旨在为农业绿色发展及功能农业研究提供理论依据和技术支持。
+                    </p>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        研究结果已在《Journal of Hazardous Materials》《Food Chemistry》《Field Crops Research》《Plant and Soil》《Postharvest Biology and Technology》《植物营养与肥料学报》《中国农业科学》《环境科学》等本领域主流期刊上发表，2021-2023年发表论文14篇，其中中科院一区和二区SCI论文8篇。
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        团队在积极参与国家部委项目的同时，与地方农业主管业务部门和实施单位、肥料公司、农产品生产加工企业等建立了良好的合作关系，积极参与农业技术指导，并提供理论支持，充分发挥团队研究技术优势，服务“三农”，助力推进农业产业化、现代化。我们常年招聘农业、土壤、植物等专业人才，欢迎感兴趣的同学加入我们，共同进步，共同成长！
+                    </p>
+                    <div class="mt-8">
+                        <a href="intro.html" class="inline-flex items-center text-secondary hover:text-primary transition-colors">
+                            了解更多 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 relative">
+                    <img src="https://github.com/acdmini/lxw-lab/blob/main/images/hezhao3.jpg" alt="团队研究场景" class="w-full h-auto rounded-lg shadow-xl">
+                    <div class="absolute -bottom-6 -left-6 bg-secondary text-white p-4 rounded-lg shadow-lg hidden md:block">
+                        <p class="font-bold">成立于2010年</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队成员 -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">团队成员</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-xl">
+                <h3 class="text-xl font-bold text-primary mb-6">导师团队</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="flex flex-col md:flex-row gap-6 p-6 bg-white rounded-lg shadow-md">
+                        <img src="https://picsum.photos/id/1005/200/200" alt="赵竹青教授" class="w-40 h-40 object-cover rounded-lg">
+                        <div>
+                            <h4 class="text-xl font-bold text-primary">赵竹青</h4>
+                            <p class="text-gray-600 mb-2">教授/博士生导师</p>
+                            <p class="text-gray-700 mb-4">研究方向：马铃薯施肥技术，作物硒营养，新型肥料研发与推广</p>
+                            <div class="flex flex-col gap-2">
+                                <a href="mailto:zzq@mail.hzau.edu.cn" class="text-secondary hover:text-primary transition-colors flex items-center">
+                                    <i class="fa fa-envelope mr-2"></i> zzq@mail.hzau.edu.cn
+                                </a>
+                                <a href="https://zyhj.hzau.edu.cn/info/1183/7559.htm" target="_blank" class="text-secondary hover:text-primary transition-colors flex items-center">
+                                    <i class="fa fa-globe mr-2"></i> 单位主页
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row gap-6 p-6 bg-white rounded-lg shadow-md">
+                        <img src="https://picsum.photos/id/1012/200/200" alt="刘新伟副教授" class="w-40 h-40 object-cover rounded-lg">
+                        <div>
+                            <h4 class="text-xl font-bold text-primary">刘新伟</h4>
+                            <p class="text-gray-600 mb-2">副教授/硕士生导师</p>
+                            <p class="text-gray-700 mb-4">研究方向：作物硒营养调控、马铃薯施肥与品质</p>
+                            <div class="flex flex-col gap-2">
+                                <a href="mailto:lxw2016@mail.hzau.edu.cn" class="text-secondary hover:text-primary transition-colors flex items-center">
+                                    <i class="fa fa-envelope mr-2"></i> lxw2016@mail.hzau.edu.cn
+                                </a>
+                                <a href="https://zyhj.hzau.edu.cn/info/1184/9748.htm" target="_blank" class="text-secondary hover:text-primary transition-colors flex items-center">
+                                    <i class="fa fa-globe mr-2"></i> 单位主页
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12">
+                    <h3 class="text-xl font-bold text-primary mb-6">毕业生</h3>
+                    <p class="text-gray-700 mb-4">已毕业博士3名，分别任教于昆明理工大学、石河子大学、华中农业大学</p>
+                    <p class="text-gray-700">已毕业硕士23名，分别就业于华中农业大学、浙江理工大学、中科院武汉植物园、广西农业科学院、湖北省地质局富硒研究所、中国腐植酸工业协会、云南白药集团中药资源有限公司、湖北省黄冈市财政局、济南市环境保护科学研究院、山东省济宁市土壤肥料工作站等企事业单位。</p>
+                </div>
+                
+                <div class="mt-12">
+                    <h3 class="text-xl font-bold text-primary mb-6">在校生</h3>
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold text-secondary">博士研究生</h4>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="p-4 bg-white rounded-lg shadow-sm">
+                                <h5 class="font-bold text-primary">陈添 博士</h5>
+                                <p class="text-gray-600 text-sm mb-2">简历：2014-2018年 湖北大学知行学院 本科；2019-2025年 华中农业大学 硕博连读 博士</p>
+                                <p class="text-gray-700 text-sm">研究方向：不同腐熟阶段秸秆对土壤微生物活性及养分转化的影响机制</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg shadow-sm">
+                                <h5 class="font-bold text-primary">李磊 博士</h5>
+                                <p class="text-gray-600 text-sm mb-2">简历：2016-2020年 华中农业大学 本科；2020-至今 华中农业大学 硕博连读 博士</p>
+                                <p class="text-gray-700 text-sm">研究方向：厌氧条件下硫对硒在铁氧化物中迁移与固存的影响</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg shadow-sm">
+                                <h5 class="font-bold text-primary">谢昊天 博士</h5>
+                                <p class="text-gray-600 text-sm mb-2">简历：2017-2021年 武汉轻工大学 本科；2021-至今 华中农业大学 硕博连读</p>
+                                <p class="text-gray-700 text-sm">研究方向：有机结合态硒的可利用性研究</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-lg font-bold text-secondary mt-8">硕士研究生</h4>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="p-4 bg-white rounded-lg shadow-sm">
+                                <h5 class="font-bold text-primary">刘伟 研究生</h5>
+                                <p class="text-gray-600 text-sm mb-2">简历：2018-2022年 河南农业大学 本科；2022-至今 华中农业大学 硕士</p>
+                                <p class="text-gray-700 text-sm">研究方向：不同改良措施对酸性土壤硒有效性的影响</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg shadow-sm">
+                                <h5 class="font-bold text-primary">周璨 研究生</h5>
+                                <p class="text-gray-600 text-sm mb-2">简历：2018-2022年 安徽农业大学 本科；2022-至今 华中农业大学 硕士</p>
+                                <p class="text-gray-700 text-sm">研究方向：微生物基质配方研制及其在小白菜上的应用</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg shadow-sm">
+                                <h5 class="font-bold text-primary">张洋洋 研究生</h5>
+                                <p class="text-gray-600 text-sm mb-2">简历：2018-2022年 河南科技学院 本科；2022-至今 华中农业大学 硕士</p>
+                                <p class="text-gray-700 text-sm">研究方向：乳酸菌和蛋白核小球藻共生体系对硒的富集和响应</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg shadow-sm">
+                                <h5 class="font-bold text-primary">马万朋 研究生</h5>
+                                <p class="text-gray-600 text-sm mb-2">简历：2019-2023年 华中农业大学 本科；2023-至今 华中农业大学 硕士</p>
+                                <p class="text-gray-700 text-sm">研究方向：氨基酸肥料与抗逆物质配施对蓝莓生长、产量及品质的影响</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="members.html" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-colors inline-flex items-center">
+                        查看全部成员 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 研究方向 -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">研究方向</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-flask text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">有机肥质量评价及改土机理</h3>
+                    <p class="text-gray-600">
+                        研究有机肥对土壤结构、肥力和微生物群落的影响机制，开发高效有机肥评价体系。
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-tint text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">土壤养分高效利用</h3>
+                    <p class="text-gray-600">
+                        探索提高土壤养分利用效率的途径和技术，减少化肥使用量，降低农业面源污染。
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-leaf text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">植物高效富硒技术</h3>
+                    <p class="text-gray-600">
+                        研究植物对硒的吸收、转运和富集机制，开发富硒农产品生产技术，提高农产品营养价值。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 研究成果 -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">研究成果</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-xl">
+                <h3 class="text-xl font-bold text-primary mb-6">近年发表论文 (2021-2023)</h3>
+                <div class="space-y-4 max-h-[500px] overflow-y-auto pr-4">
+                    <div class="border-l-4 border-secondary pl-4 py-2">
+                        <p class="font-medium">[1] 杜平, 张海清, 李磊, 等. 基施锌肥对马铃薯锌含量及块茎品质的影响 [J]. 中国马铃薯, 2020, 34(05): 275-80.</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4 py-2">
+                        <p class="font-medium">[2] 杜平, 赵竹青, 宋波涛, 等. 马铃薯锌营养特性及锌生物强化技术研究进展 [J]. 华中农业大学学报, 2021, 40(04): 36-43.</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4 py-2">
+                        <p class="font-medium">[3] 李鸣凤, 彭文勇, 刘新伟, 等. 外源硒对油菜硒积累及土壤硒残留的影响 [J]. 湖南农业大学学报(自然科学版), 2022, 48(02): 139-43+221.</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4 py-2">
+                        <p class="font-medium">[4] 吕臣浩, 赵竹青, 魏玉杰, 等. 富硒土壤中硒生物有效性的提取方法研究 [J]. 华中农业大学学报, 2023, 42(06): 87-95.</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4 py-2">
+                        <p class="font-medium">[5] 王安心, 李伟, 周义新, 等. 铁锰铜肥对我国主要粮食作物增产的整合分析 [J]. 中国土壤与肥料, 2024, (11): 248-55.</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4 py-2">
+                        <p class="font-medium">[6] LI L, YI C, ZHAO Z, et al. Effects of selenite on growth and symbiotic nitrogen fixation of soybean [J]. Plant and Soil, 2025.</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4 py-2">
+                        <p class="font-medium">[7] LYU C, QIN Y, CHEN T, et al. Microbial induced carbonate precipitation contributes to the fates of Cd and Se in Cd-contaminated seleniferous soils [J]. Journal of Hazardous Materials, 2022, 423.</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4 py-2">
+                        <p class="font-medium">[8] DENG X, LIAO J, ZHAO Z, et al. Distribution and speciation of selenium in soybean proteins and its effect on protein structure and functionality [J]. Food Chemistry, 2022, 370.</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4 py-2">
+                        <p class="font-medium">[9] DENG X, ZHAO Z, LV C, et al. Effects of sulfur application on selenium uptake and seed selenium speciation in soybean (Glycine max L.) grown in different soil types [J]. Ecotoxicology and Environmental Safety, 2021, 209.</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4 py-2">
+                        <p class="font-medium">[10] ZHAO X, JIANG J, YANG S, et al. Effects of Sodium Selenate on Growth, Selenium Forms, and Nutritional Quality of Chlorella pyrenoidosa [J]. Foods, 2025, 14(3).</p>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <a href="achievements.html" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-colors inline-flex items-center">
+                        查看全部成果 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队风采 -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">团队风采</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="overflow-hidden rounded-lg shadow-md group card-hover">
+                    <img src="https://picsum.photos/id/21/600/400" alt="团队活动" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold text-primary">实验室研讨</h3>
+                        <p class="text-gray-600 text-sm">定期开展学术研讨，分享最新研究进展</p>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md group card-hover">
+                    <img src="https://picsum.photos/id/22/600/400" alt="团队活动" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold text-primary">田间试验</h3>
+                        <p class="text-gray-600 text-sm">开展实地研究，获取第一手数据</p>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md group card-hover">
+                    <img src="https://picsum.photos/id/23/600/400" alt="团队活动" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold text-primary">学术会议</h3>
+                        <p class="text-gray-600 text-sm">参加国内外学术会议，与同行交流</p>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md group card-hover">
+                    <img src="https://picsum.photos/id/24/600/400" alt="团队活动" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold text-primary">合作交流</h3>
+                        <p class="text-gray-600 text-sm">与国内外科研机构保持密切合作</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="gallery.html" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-colors inline-flex items-center">
+                    查看更多照片 <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 招生信息 -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">招生信息</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <p class="text-gray-700 mb-4">计划每年招收3~5名硕士，欢迎有意者提交简历、成绩单以及其他辅助材料。</p>
+                <p class="text-gray-700">学生素质:英语水平优异，专业基础扎实，工作积极主动，良好的情商，及团队合作精神。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">加入我们</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8 md:p-12">
+                        <h3 class="text-2xl font-bold text-primary mb-6">招聘信息</h3>
+                        <p class="text-gray-700 mb-8">
+                            我们常年招聘农业、土壤、植物等专业人才，欢迎感兴趣的同学加入我们，共同进步，共同成长！
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary">邮件联系</h4>
+                                    <p class="text-gray-600">请将个人简历发送至 <a href="mailto:zzq@mail.hzau.edu.cn" class="text-secondary hover:text-primary">zzq@mail.hzau.edu.cn</a></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-map-marker text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary">地址</h4>
+                                    <p class="text-gray-600">湖北省武汉市洪山区狮子山街1号华中农业大学资环楼4楼</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-primary p-8 md:p-12 text-white">
+                        <h3 class="text-2xl font-bold mb-6">研究方向</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <i class="fa fa-check-circle mr-3"></i>
+                                <span>有机肥质量评价及改土机理</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check-circle mr-3"></i>
+                                <span>土壤养分高效利用</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check-circle mr-3"></i>
+                                <span>植物高效富硒技术</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check-circle mr-3"></i>
+                                <span>新型肥料研发与推广</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check-circle mr-3"></i>
+                                <span>作物品质调控</span>
+                            </li>
+                        </ul>
+                        <div class="mt-12">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">施肥技术与耕地保育团队</h3>
+                    <p class="text-white/80 mb-6">
+                        致力于农业绿色发展与功能农业研究，减少化肥用量，提高土壤质量
+                    </p>
+                    <div class="flex space-x-4">
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/80 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="intro.html" class="text-white/80 hover:text-white transition-colors">团队简介</a></li>
+                        <li><a href="achievements.html" class="text-white/80 hover:text-white transition-colors">研究成果</a></li>
+                        <li><a href="gallery.html" class="text-white/80 hover:text-white transition-colors">团队风采</a></li>
+                        <li><a href="members.html" class="text-white/80 hover:text-white transition-colors">团队成员</a></li>
+                        <li><a href="recruitment.html" class="text-white/80 hover:text-white transition-colors">招生信息</a> <!-- 新增页脚链接 -->
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mr-3 mt-1"></i>
+                            <span>湖北省武汉市洪山区狮子山街1号华中农业大学资环楼4楼</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope mr-3 mt-1"></i>
+                            <span>zzq@mail.hzau.edu.cn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 mt-10 pt-6 text-center text-white/60">
+                <p>© 2025 施肥技术与耕地保育团队 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.add('bg-white/95');
+                nav.classList.add('backdrop-blur-sm');
+            } else {
+                nav.classList.remove('py-2');
+                nav.classList.remove('bg-white/95');
+                nav.classList.remove('backdrop-blur-sm');
+            }
+        });
+        
+        // 移动端菜单
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuToggle.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+            } else {
+                menuToggle.innerHTML = '<i class="fa fa-times text-xl"></i>';
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuToggle.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
