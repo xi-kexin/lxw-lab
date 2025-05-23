@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>施肥技术与耕地保育团队 - 研究成果</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E5631',
+                        secondary: '#4CAF50',
+                        accent: '#8DDFCB',
+                        light: '#F5F5DC',
+                        dark: '#333333',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-light text-dark">
+    <!-- 导航栏 -->
+    <nav id="main-nav" class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-primary font-bold text-xl flex items-center">
+                <i class="fa fa-leaf mr-2"></i>
+                <span>施肥技术与耕地保育团队</span>
+            </a>
+
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-primary hover:text-secondary transition-colors">首页</a>
+                <a href="members.html" class="text-primary hover:text-secondary transition-colors">团队成员</a>
+                <a href="achievements.html" class="text-primary hover:text-secondary transition-colors">研究成果</a>
+                <a href="gallery.html" class="text-primary hover:text-secondary transition-colors">团队风采</a>
+                <a href="recruitment.html" class="text-primary hover:text-secondary transition-colors">招生信息</a>
+            </div>
+
+            <!-- 移动端菜单按钮 -->
+            <button id="menu-toggle" class="md:hidden text-primary focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="index.html" class="text-primary hover:text-secondary py-2 border-b border-gray-100">首页</a>
+                <a href="members.html" class="text-primary hover:text-secondary py-2 border-b border-gray-100">团队成员</a>
+                <a href="achievements.html" class="text-primary hover:text-secondary py-2 border-b border-gray-100">研究成果</a>
+                <a href="gallery.html" class="text-primary hover:text-secondary py-2 border-b border-gray-100">团队风采</a>
+                <a href="recruitment.html" class="text-primary hover:text-secondary py-2">招生信息</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 研究成果 -->
+    <section class="py-20 bg-white pt-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">研究成果</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-xl">
+                <h3 class="text-xl font-bold text-primary mb-6">主要论文</h3>
+                <ul class="list-decimal list-inside space-y-4">
+                    <li>杜平, 张海清, 李磊, 等. 基施锌肥对马铃薯锌含量及块茎品质的影响 [J]. 中国马铃薯, 2020, 34(05): 275-80.</li>
+                    <li>杜平, 赵竹青, 宋波涛, 等. 马铃薯锌营养特性及锌生物强化技术研究进展 [J]. 华中农业大学学报, 2021, 40(04): 36-43.</li>
+                    <li>李鸣凤, 彭文勇, 刘新伟, 等. 外源硒对油菜硒积累及土壤硒残留的影响 [J]. 湖南农业大学学报(自然科学版), 2022, 48(02): 139-43+221.</li>
+                    <li>吕臣浩, 赵竹青, 魏玉杰, 等. 富硒土壤中硒生物有效性的提取方法研究 [J]. 华中农业大学学报, 2023, 42(06): 87-95.</li>
+                    <li>王安心, 李伟, 周义新, 等. 铁锰铜肥对我国主要粮食作物增产的整合分析 [J]. 中国土壤与肥料, 2024, (11): 248-55.</li>
+                    <li>LI L, YI C, ZHAO Z, et al. Effects of selenite on growth and symbiotic nitrogen fixation of soybean [J]. Plant and Soil, 2025.</li>
+                    <li>LYU C, QIN Y, CHEN T, et al. Microbial induced carbonate precipitation contributes to the fates of Cd and Se in Cd-contaminated seleniferous soils [J]. Journal of Hazardous Materials, 2022, 423.</li>
+                    <li>DENG X, LIAO J, ZHAO Z, et al. Distribution and speciation of selenium in soybean proteins and its effect on protein structure and functionality [J]. Food Chemistry, 2022, 370.</li>
+                    <li>DENG X, ZHAO Z, LV C, et al. Effects of sulfur application on selenium uptake and seed selenium speciation in soybean (Glycine max L.) grown in different soil types [J]. Ecotoxicology and Environmental Safety, 2021, 209.</li>
+                    <li>ZHAO X, JIANG J, YANG S, et al. Effects of Sodium Selenate on Growth, Selenium Forms, and Nutritional Quality of Chlorella pyrenoidosa [J]. Foods, 2025, 14(3).</li>
+                    <li>ZHANG H, ZHAO Z, NIE B, et al. Selenium loss and changes in product quality during cooking of selenium enriched potato tubers [J]. Journal of Food Composition and Analysis, 2021, 96.</li>
+                    <li>LYU C, QIN Y, ZHAO Z, et al. Characteristics of selenium enrichment and assessment of selenium bioavailability using the diffusive gradients in thin-films technique in seleniferous soils in Enshi, Central China [J]. Environmental Pollution, 2021, 273.</li>
+                    <li>LYU C, LI L, LIU X, et al. Rape straw application facilitates Se and Cd mobilization in Cd-contaminated seleniferous soils by enhancing microbial iron reduction [J]. Environmental Pollution, 2022, 310.</li>
+                    <li>LYU C, CHEN J, LI L, et al. Characteristics of Se in water-soil-plant system and threshold of soil Se in seleniferous areas in Enshi, China [J]. Science of The Total Environment, 2022, 827.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-primary mb-6 mt-12">主要专利</h3>
+                <ul class="list-decimal list-inside space-y-4">
+                    <li>一种用于富硒农产品生产的生物炭基硒肥及其制备方法和应用<br>赵竹青, 李伟, 秦玉琪, 吕臣浩, 陈婷, 李鸣凤<br>专利号：ZL202310543214.5</li>
+                    <li>一种稻田镉污染修复剂及其制备方法和应用<br>吕臣浩, 赵竹青, 陈婷, 李鸣凤, 秦玉琪 <br>专利号：ZL202210987654.3</li>
+                    <li>一种土壤硒生物有效性改良剂及其制备方法和应用<br>秦玉琪, 赵竹青, 吕臣浩, 李鸣凤, 陈婷<br>专利号：ZL202210765432.1</li>
+                    <li>一种用于土壤样品采集的分层取样装置<br>李鸣凤, 赵竹青, 吕臣浩, 秦玉琪, 陈婷<br>专利号：ZL202320765432.1</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+   <!-- 页脚 -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">施肥技术与耕地保育团队</h3>
+                    <p class="text-white/80 mb-6">
+                        致力于农业绿色发展与功能农业研究，减少化肥用量，提高土壤质量
+                    </p>
+                    <div class="flex space-x-4">
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/80 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="achievements.html" class="text-white/80 hover:text-white transition-colors">研究成果</a></li>
+                        <li><a href="gallery.html" class="text-white/80 hover:text-white transition-colors">团队风采</a></li>
+                        <li><a href="members.html" class="text-white/80 hover:text-white transition-colors">团队成员</a></li>
+                        <li><a href="recruitment.html" class="text-white/80 hover:text-white transition-colors">招生信息</a> <!-- 新增页脚链接 -->
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mr-3 mt-1"></i>
+                            <span>湖北省武汉市洪山区狮子山街1号华中农业大学资环楼4楼</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope mr-3 mt-1"></i>
+                            <span>zzq@mail.hzau.edu.cn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 mt-10 pt-6 text-center text-white/60">
+                <p>© 2025 施肥技术与耕地保育团队 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.add('bg-white/95');
+                nav.classList.add('backdrop-blur-sm');
+            } else {
+                nav.classList.remove('py-2');
+                nav.classList.remove('bg-white/95');
+                nav.classList.remove('backdrop-blur-sm');
+            }
+        });
+        
+        // 移动端菜单
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuToggle.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+            } else {
+                menuToggle.innerHTML = '<i class="fa fa-times text-xl"></i>';
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuToggle.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
