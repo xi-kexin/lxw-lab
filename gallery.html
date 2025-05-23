@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>施肥技术与耕地保育团队 - 团队风采</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E5631',
+                        secondary: '#4CAF50',
+                        accent: '#8DDFCB',
+                        light: '#F5F5DC',
+                        dark: '#333333',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- 导航栏 -->
+    <nav id="main-nav" class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-primary font-bold text-xl flex items-center">
+                <i class="fa fa-leaf mr-2"></i>
+                <span>施肥技术与耕地保育团队</span>
+            </a>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-primary hover:text-secondary transition-colors">首页</a>
+                <a href="members.html" class="text-primary hover:text-secondary transition-colors">团队成员</a>
+                <a href="achievements.html" class="text-primary hover:text-secondary transition-colors">研究成果</a>
+                <a href="gallery.html" class="text-primary hover:text-secondary transition-colors">团队风采</a>
+                <a href="recruitment.html" class="text-primary hover:text-secondary transition-colors">招生信息</a>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menu-toggle" class="md:hidden text-primary focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="index.html" class="text-primary hover:text-secondary py-2 border-b border-gray-100">首页</a>
+                <a href="members.html" class="text-primary hover:text-secondary py-2 border-b border-gray-100">团队成员</a>
+                <a href="achievements.html" class="text-primary hover:text-secondary py-2 border-b border-gray-100">研究成果</a>
+                <a href="gallery.html" class="text-primary hover:text-secondary py-2 border-b border-gray-100">团队风采</a>
+                <a href="recruitment.html" class="text-primary hover:text-secondary py-2">招生信息</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 团队风采 -->
+    <section class="py-20 bg-white pt-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">团队风采</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-xl">
+                <h3 class="text-xl font-bold text-primary mb-6">团队精彩瞬间</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- 示例图片，你可以替换为实际的图片链接 -->
+                    <img src="https://github.com/acdmini/lxw-lab/blob/main/images/hezhao4.jpg?raw=true" alt="团队风采1" class="w-full h-auto object-cover rounded-lg card-hover">
+                    <img src="https://github.com/acdmini/lxw-lab/blob/main/images/12.jpg?raw=true" alt="团队风采2" class="w-full h-auto object-cover rounded-lg card-hover">
+                    <img src="https://github.com/acdmini/lxw-lab/blob/main/images/11.jpg?raw=true" alt="团队风采3" class="w-full h-auto object-cover rounded-lg card-hover">
+                    <img src="https://github.com/acdmini/lxw-lab/blob/main/images/21.jpg?raw=true" alt="团队风采4" class="w-full h-auto object-cover rounded-lg card-hover">
+                    <img src="https://github.com/acdmini/lxw-lab/blob/main/images/5.jpg?raw=true" alt="团队风采5" class="w-full h-auto object-cover rounded-lg card-hover">
+                    <img src="https://github.com/acdmini/lxw-lab/blob/main/images/2.png?raw=true" alt="团队风采6" class="w-full h-auto object-cover rounded-lg card-hover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">施肥技术与耕地保育团队</h3>
+                    <p class="text-white/80 mb-6">
+                        致力于农业绿色发展与功能农业研究，减少化肥用量，提高土壤质量
+                    </p>
+                    <div class="flex space-x-4">
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/80 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="achievements.html" class="text-white/80 hover:text-white transition-colors">研究成果</a></li>
+                        <li><a href="gallery.html" class="text-white/80 hover:text-white transition-colors">团队风采</a></li>
+                        <li><a href="members.html" class="text-white/80 hover:text-white transition-colors">团队成员</a></li>
+                        <li><a href="recruitment.html" class="text-white/80 hover:text-white transition-colors">招生信息</a> <!-- 新增页脚链接 -->
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mr-3 mt-1"></i>
+                            <span>湖北省武汉市洪山区狮子山街1号华中农业大学资环楼4楼</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope mr-3 mt-1"></i>
+                            <span>zzq@mail.hzau.edu.cn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 mt-10 pt-6 text-center text-white/60">
+                <p>© 2025 施肥技术与耕地保育团队 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.add('bg-white/95');
+                nav.classList.add('backdrop-blur-sm');
+            } else {
+                nav.classList.remove('py-2');
+                nav.classList.remove('bg-white/95');
+                nav.classList.remove('backdrop-blur-sm');
+            }
+        });
+        
+        // 移动端菜单
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuToggle.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+            } else {
+                menuToggle.innerHTML = '<i class="fa fa-times text-xl"></i>';
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuToggle.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
